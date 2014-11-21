@@ -2,6 +2,12 @@
 
 ### HEAD
 
+### v0.4.0
+* Removed peerDependencies
+* Updated phantomcss to v0.9.0
+* Using casper from phantomcss
+* No need for bower anymore
+
 ### v0.3.2
 * Update dependencies
 * Add `mismatchTolerance`as option

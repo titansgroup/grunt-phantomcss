@@ -4,23 +4,19 @@
 
 ## Notice
 
-**This is a fork of the original (presumably discontinued) repository of [grunt-phantomcss](https://github.com/chrisgladd/grunt-phantomcss). Currently this version here is untagged and unreleased on npm. However, you can install and use this version:**
+**This is a fork of the original (presumably discontinued) repository of [grunt-phantomcss](https://github.com/chrisgladd/grunt-phantomcss) and anselmh and  micahgodbolt (https://github.com/micahgodbolt/grunt-phantomcss). Currently this version here is untagged and unreleased on npm. However, you can install and use this version:**
 
 Add this to your `package.json`:
 
-    "grunt-phantomcss": "git://github.com/anselmh/grunt-phantomcss.git",
+    "grunt-phantomcss": "git://github.com/codexico/grunt-phantomcss.git",
 
 or, alternatively, type this into your command line interface:
 
-    npm i --save-dev git://github.com/anselmh/grunt-phantomcss.git
+    npm i --save-dev git://github.com/codexico/grunt-phantomcss.git
 
 ## CHANGELOG
 
-* Added `mismatchTolerance` tolerance (`mismatchTolerance: 0.05` is default) (thx [fidgety](https://github.com/chrisgladd/grunt-phantomcss/pull/17))
-* Use PhantomCSS v0.7.1
-* Update dependencies
-* Remove grunt as peerDependency causing multiple issues with peerPackages
-* Fix post-script `bower install`
+* Removed peerDependencies, updated phantomcss to v0.9.0
 
 ## TO DO:
 

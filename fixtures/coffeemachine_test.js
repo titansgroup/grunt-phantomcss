@@ -1,3 +1,6 @@
+// Prevent error: "CasperError: casper.test property is only available using the `casperjs test` command"
+phantom.casperTest = true;
+
 casper.start('fixtures/coffeemachine.html').then(function () {
     phantomcss.screenshot('#coffee-machine-wrapper', 'open coffee machine button');
 }).then( function () {

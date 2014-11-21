@@ -60,6 +60,9 @@
     "temporary": "0.0.8",
     "phantomjs": "^1.9.7-15"
   },
+  "peerDependencies": {
+    "phantomjs": "1.9.7-14"
+  },
   "keywords": [
     "gruntplugin",
     "phantomcss",

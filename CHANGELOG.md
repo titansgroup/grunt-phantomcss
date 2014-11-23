@@ -2,6 +2,10 @@
 
 ### HEAD
 
+### v0.4.1
+* Added phantomjs as a global dependency.
+* Updated docs
+
 ### v0.4.0
 * Removed peerDependencies
 * Updated phantomcss to v0.9.0

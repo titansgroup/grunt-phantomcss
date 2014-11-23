@@ -16,7 +16,7 @@ or, alternatively, type this into your command line interface:
 npm install --save-dev git://github.com/codexico/grunt-phantomcss.git
 ```
 
-This plugins needs phantomjs installed globaly:
+This plugins needs phantomjs installed globally:
 
 ```shell
 npm install -g phantomjs

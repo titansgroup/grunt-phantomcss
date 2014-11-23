@@ -8,12 +8,12 @@
 
 Add this to your `package.json`:
 
-    "grunt-phantomcss": "git://github.com/codexico/grunt-phantomcss.git",
+    "grunt-phantomcss": "git://github.com/micahgodbolt/grunt-phantomcss.git",
 
 or, alternatively, type this into your command line interface:
 
 ```shell
-npm install --save-dev git://github.com/codexico/grunt-phantomcss.git
+npm install --save-dev git://github.com/micahgodbolt/grunt-phantomcss.git
 ```
 
 This plugins needs phantomjs installed globally:

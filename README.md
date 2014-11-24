@@ -41,6 +41,12 @@ grunt.initConfig({
 
 ### Options
 
+#### baseURL - Optional
+Type: `String`
+Default: blank
+
+Host for test - Use in test files: ```phantomcss.baseURL```
+
 #### src
 Type: `String|Array`
 
@@ -123,12 +129,12 @@ grunt.initConfig({
 #### Sample test file
 
 Test files should do the following:
-* Start CasperJS with the URL you want to test
+* You no longer need ```casper.start``` - Use ```thenOpen``` to start CasperJS with the URL you want to test - NOT USE START (casper.start is default) 
 * Manipulate the page in some way
 * Take screenshots
 
 ```javascript
-casper.start('http://localhost:3000/')
+casper.thenOpen('http://localhost:3000/')
 .then(function() {
   phantomcss.screenshot('#todo-app', 'Main app');
 })
@@ -149,17 +155,18 @@ casper.start('http://localhost:3000/')
 You can also load a local file by specifying a path (relative to the Gruntfile):
 
 ```javascript
-casper.start('build/client/index.html')
+casper.thenOpen('build/client/index.html')
 .then(function() {
   // ...
 });
 ```
 
 ### Multiple Test Files
-Your first test file should use ```casper.start```
+you no longer need ```casper.start```
 
+File 1 - file1.js
 ```javascript
-casper.start('http://localhost:3000/')
+casper.thenOpen('http://localhost:3000/')
 .then(function() {
   phantomcss.screenshot('#todo-app', 'Main app');
 })
@@ -170,8 +177,23 @@ casper.start('http://localhost:3000/')
 
   phantomcss.screenshot('#todo-app', 'Item added');
 });
-
 ```
+
+File 2 - file2.js
+```javascript
+casper.thenOpen('http://localhost:3000/contact')
+.then(function() {
+  phantomcss.screenshot('#todo-app-contact', 'Main app');
+})
+.then(function() {
+  casper.fill('form.todo-form-contact', {
+    todo: 'Item2'
+  }, true);
+
+  phantomcss.screenshot('#todo-app-contact', 'Item added');
+});
+```
+
 Subsequent files should call ```casper.then``` to continue the previous test.
 
 ```javascript
@@ -181,7 +203,7 @@ casper.then(function() {
   phantomcss.screenshot('#todo-app', 'Item checked off');
 });
 ```
-You can also use ```casper.thenOpen``` to load a new url and continue testing in subsequent files instead of ```casper.start```.
+You can also use ```casper.thenOpen``` to load a new url and continue testing
 
 
 See the [CasperJS documentation](http://casperjs.readthedocs.org/en/latest/modules/casper.html) and the [PhantomCSS documentation](https://github.com/Huddle/PhantomCSS) for more information on using CasperJS and PhantomCSS.

@@ -18,6 +18,7 @@ module.exports = function(grunt) {
         var done = this.async();
 
         var options = this.options({
+            baseUrl: '',
             screenshots: 'screenshots',
             results: 'results',
             viewportSize: [1280, 800],

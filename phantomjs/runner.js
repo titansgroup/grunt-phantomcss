@@ -47,6 +47,8 @@ phantomcss.init({
     }
 });
 
+casper.start();
+
 // Run the test scenarios
 args.test.forEach(function(testSuite) {
     require(testSuite);

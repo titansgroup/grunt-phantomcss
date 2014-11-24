@@ -28,6 +28,8 @@ var casper = require('casper').create({
 // Require and initialise PhantomCSS module
 var phantomcss = require(phantomCSSPath+s+'phantomcss.js');
 
+phantomcss.baseURL = args.baseURL;
+
 phantomcss.init({
     screenshotRoot: args.screenshots,
     failedComparisonsRoot: args.failures,

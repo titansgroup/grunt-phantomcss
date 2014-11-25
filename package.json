@@ -8,8 +8,16 @@
     "email": "chris.m.gladd@gmail.com"
   },
   "contributors": [
-    { "name": "Larry Davis", "email":"lazd@lazd.net", "url":"https://github.com/lazd" },
-    { "name": "Aliaksei Sapach", "email":"dreamsonic@tut.by", "url":"https://github.com/asapach" }
+    {
+      "name": "Larry Davis",
+      "email": "lazd@lazd.net",
+      "url": "https://github.com/lazd"
+    },
+    {
+      "name": "Aliaksei Sapach",
+      "email": "dreamsonic@tut.by",
+      "url": "https://github.com/asapach"
+    }
   ],
   "repository": {
     "type": "git",
@@ -29,8 +37,7 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt test",
-    "postinstall": "node ./node_modules/bower/bin/bower install"
+    "test": "grunt test"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.0",
@@ -39,11 +46,12 @@
     "grunt": "~0.4.1"
   },
   "dependencies": {
-    "bower": "~1.0.3",
-    "temporary": "0.0.7"
+    "temporary": "0.0.7",
+    "phantomjs": "~1.9.12",
+    "casperjs": "~1.1.0-beta3",
+    "phantomcss": "~0.9.0"
   },
   "peerDependencies": {
-    "phantomjs": "~1.9.2-2",
     "grunt": "~0.4.1"
   },
   "keywords": [

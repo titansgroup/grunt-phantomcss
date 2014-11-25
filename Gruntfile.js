@@ -22,7 +22,7 @@ module.exports = function(grunt) {
             },
         },
 
-        // Before generating any new files, remove any 
+        // Before generating any new files, remove any
         // previously-created files.
         clean: {
             tests: ['tmp'],
@@ -48,8 +48,13 @@ module.exports = function(grunt) {
         },
     });
 
-    // Actually load this plugin's task(s).
-    grunt.loadTasks('tasks');
+    // Timings for Grunt
+    require('time-grunt')(grunt);
+
+    // Load all tasks JIT
+    require('jit-grunt')(grunt, {
+        phantomcss: 'tasks/phantomcss.js'
+    });
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-jshint');

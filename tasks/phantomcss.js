@@ -13,6 +13,9 @@
 var path = require('path');
 var tmp = require('temporary');
 var phantomBinaryPath = require('phantomjs').path;
+
+var casperPath = path.join(__dirname, '..', 'node_modules', 'casperjs');
+
 var runnerPath = path.join(__dirname, '..', 'phantomjs', 'runner.js');
 var phantomCSSPath = path.join(__dirname, '..', 'node_modules', 'phantomcss');
 
@@ -22,6 +25,7 @@ module.exports = function(grunt) {
 
         // Variable object to set default values for options
         var options = this.options({
+            baseURL: '',
             screenshots: 'screenshots',
             results: 'results',
             viewportSize: [1280, 800],
@@ -163,6 +167,8 @@ module.exports = function(grunt) {
         // Pass necessary paths
         options.tempFile = tempFile.path;
         options.phantomCSSPath = phantomCSSPath;
+        options.casperPath = casperPath;
+
 
         // Remove old diff screenshots
         deleteDiffScreenshots();

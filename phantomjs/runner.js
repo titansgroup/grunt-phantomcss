@@ -31,7 +31,7 @@ var sendMessage = function() {
 // Initialise CasperJs
 var phantomCSSPath = args.phantomCSSPath;
 
-phantom.casperPath = phantomCSSPath + s + 'node_modules' + s + 'casperjs';
+phantom.casperPath = args.casperPath;
 phantom.injectJs(phantom.casperPath + s + 'bin' + s + 'bootstrap.js');
 
 var casper = require('casper').create({
@@ -42,6 +42,10 @@ var casper = require('casper').create({
 
 // Require and initialise PhantomCSS module
 var phantomcss = require(phantomCSSPath + s + 'phantomcss.js');
+
+phantom.casperTest = true;
+
+phantomcss.baseURL = args.baseURL;
 
 phantomcss.init({
   screenshotRoot: args.screenshots,
@@ -62,6 +66,8 @@ phantomcss.init({
     sendMessage('onComplete', allTests, noOfFails, noOfErrors);
   }
 });
+
+casper.start();
 
 // Run the test scenarios
 args.test.forEach(function(testSuite) {
